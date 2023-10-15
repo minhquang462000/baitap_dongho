@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
-import Time from "./time";
-const BtnTime = () => {
+const BtnTime = ({
+  seconds = { seconds },
+  minutes = { minutes },
+  setMInutes = { setMInutes },
+  setSeconds = { setSeconds },
+  timer = { timer },
+}) => {
   const Restart = () => {
     setMInutes(10);
     setSeconds(0);
   };
+  // useEffect(()=>{})
   const Stop = () => {
+    console.log(timer);
     clearInterval(timer);
   };
   return (
